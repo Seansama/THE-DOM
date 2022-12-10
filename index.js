@@ -42,7 +42,17 @@ Array.from(books).forEach(function (book){
 // console.log(clonedBanner)
 
 const bookList = document.querySelector(`#book-list`)
-console.log(`the parent node is: `,bookList.parentNode)
-console.log(`the parent element is: `,bookList.parentElement.parentElement)
-console.log(bookList.childNodes)
-console.log(bookList.children)
+// console.log(`the parent node is: `,bookList.parentNode)
+// console.log(`the parent element is: `,bookList.parentElement.parentElement)
+// console.log(bookList.childNodes)
+// console.log(bookList.children)
+
+console.log(`Book-list next sibling is:`,bookList.nextSibling)
+console.log(`Book-list next element sibling is:`,bookList.nextElementSibling)
+
+console.log(`Book-list previous sibling is:`,bookList.previousSibling)
+console.log(`Book-list previous element sibling is:`,bookList.previousElementSibling)
+
+
+bookList.previousElementSibling.querySelector('p').innerHTML += `<br/> Too cool for everyone else!`
+
