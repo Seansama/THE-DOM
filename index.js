@@ -21,14 +21,14 @@ Array.from(books).forEach(function (book) {
     console.log(book)
 })
  */
-let books = document.querySelector(`book-list li .name`)
-//console.log(`books`)
+// let books = document.querySelector(`book-list li .name`)
+// //console.log(`books`)
+//
+// books = document.querySelectorAll(`#book-list li .name`)
+// Array.from(books).forEach(function (book){
+//     book.textContent += `(book title)`;
 
-books = document.querySelectorAll(`#book-list li .name`)
-Array.from(books).forEach(function (book){
-    book.textContent += `(book title)`;
-
-})
+// })
 // const bookList = document.querySelector(`#book-list`);
 // // bookList.innerHTML = `<h2>Books and more Books...</h2>`
 // bookList.innerHTML += `<p>This is how you add HTML</p>`
@@ -41,18 +41,41 @@ Array.from(books).forEach(function (book){
 // const clonedBanner = banner.cloneNode(true)
 // console.log(clonedBanner)
 
-const bookList = document.querySelector(`#book-list`)
+// const bookList = document.querySelector(`#book-list`)
 // console.log(`the parent node is: `,bookList.parentNode)
 // console.log(`the parent element is: `,bookList.parentElement.parentElement)
 // console.log(bookList.childNodes)
 // console.log(bookList.children)
 
-console.log(`Book-list next sibling is:`,bookList.nextSibling)
-console.log(`Book-list next element sibling is:`,bookList.nextElementSibling)
+// console.log(`Book-list next sibling is:`,bookList.nextSibling)
+// console.log(`Book-list next element sibling is:`,bookList.nextElementSibling)
+//
+// console.log(`Book-list previous sibling is:`,bookList.previousSibling)
+// console.log(`Book-list previous element sibling is:`,bookList.previousElementSibling)
 
-console.log(`Book-list previous sibling is:`,bookList.previousSibling)
-console.log(`Book-list previous element sibling is:`,bookList.previousElementSibling)
+
+// bookList.previousElementSibling.querySelector('p').innerHTML += `<br/> Too cool for everyone else!`
+
+let btns = document.querySelectorAll(`#book-list .delete`)
+
+Array.from(btns).forEach(function (btn) {
+    btn.addEventListener(`click`, function (e) {
+
+        const li = e.target.parentElement
+li.parentNode.removeChild(li)
+    });
+
+});
+
+const link = document.querySelector(`#page-banner a`)
+
+link.addEventListener(`click`, function (e) {
+    e.preventDefault();
+    console.log(`navigation to `, e.target.textContent, `was prevented`)
+    
+})
 
 
-bookList.previousElementSibling.querySelector('p').innerHTML += `<br/> Too cool for everyone else!`
+
+
 
