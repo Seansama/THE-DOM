@@ -95,6 +95,19 @@ const addForm = document.forms[`add-book`]
 addForm.addEventListener(`submit`, function (e) {
     e.preventDefault();
     const value = addForm.querySelector(`input[type='text']`).value
-    console.log(value)
+    //console.log(value)
+
+    //create Elements
+    const li =document.createElement(`li`);
+    const bookName = document.createElement(`span`)
+    const deleteBtn = document.querySelector(`span`)
+
+    deleteBtn.textContent = 'delete';
+    bookName.textContent = value;
+
+    //append to DOM
+    li.appendChild(bookName)
+    li.appendChild(deleteBtn)
+    list.appendChild(li)
 })
 
