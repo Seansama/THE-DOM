@@ -46,7 +46,7 @@ addForm.addEventListener(`submit`, function (e) {
 
 //Hide checkbox and change events
 const hideBox = document.querySelector(`#Hide`)
-hideBox.addEventListener(`change`, function (e) {
+hideBox.addEventListener(`change`, function () {
     if(hideBox.checked){
         list.style.display = `none`;
     }
@@ -74,4 +74,20 @@ book.style.display = 'block';
 
 })
 
+//Tabbed content
+const tabs = document.querySelector(`.tabs`)
+const panels = document.querySelector(`.panel`)
+tabs.addEventListener(`click`, (e) => {
+    if(e.target.tagName === 'LI'){
+        const targetPanel = document.querySelector(e.target.dataset.target)
+        panels.forEach((panel) => {
+            if (panel === targetPanel){
+                panel.classList.add(`active`)
+            }
+            else{
+                panel.classList.remove(`active`)
+            }
+        })
+    }
+    })
 
