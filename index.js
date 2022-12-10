@@ -113,5 +113,17 @@ addForm.addEventListener(`submit`, function (e) {
     li.appendChild(bookName)
     li.appendChild(deleteBtn)
     list.appendChild(li)
+
+})
+//Hide checkbox and change events
+const hideBox = document.querySelector(`#Hide`)
+hideBox.addEventListener(`change`, function (e) {
+    if(hideBox.checked){
+        list.style.display = `none`;
+    }
+    else{
+        list.style.display = `initial`;
+    }
+
 })
 
