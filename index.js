@@ -90,4 +90,11 @@ list.addEventListener(`click`, function (e) {
 
 })
 
+//interacting with forms
+const addForm = document.forms[`add-book`]
+addForm.addEventListener(`submit`, function (e) {
+    e.preventDefault();
+    const value = addForm.querySelector(`input[type='text']`).value
+    console.log(value)
+})
 
