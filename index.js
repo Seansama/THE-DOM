@@ -100,10 +100,14 @@ addForm.addEventListener(`submit`, function (e) {
     //create Elements
     const li =document.createElement(`li`);
     const bookName = document.createElement(`span`)
-    const deleteBtn = document.querySelector(`span`)
+    const deleteBtn = document.createElement(`span`)
 
     deleteBtn.textContent = 'delete';
     bookName.textContent = value;
+
+    //add classes
+    bookName.classList.add('name')
+    deleteBtn.classList.add('delete')
 
     //append to DOM
     li.appendChild(bookName)
