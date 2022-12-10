@@ -56,6 +56,9 @@ Array.from(books).forEach(function (book) {
 
 // bookList.previousElementSibling.querySelector('p').innerHTML += `<br/> Too cool for everyone else!`
 
+//Events and event Listeners
+
+/*
 let btns = document.querySelectorAll(`#book-list .delete`)
 
 Array.from(btns).forEach(function (btn) {
@@ -66,7 +69,9 @@ li.parentNode.removeChild(li)
     });
 
 });
+ */
 
+//PreventDefault event
 const link = document.querySelector(`#page-banner a`)
 
 link.addEventListener(`click`, function (e) {
@@ -75,7 +80,14 @@ link.addEventListener(`click`, function (e) {
     
 })
 
+//Delete button functionality using event bubbling
+const list = document.querySelector(`#book-list ul`)
+list.addEventListener(`click`, function (e) {
+    if(e.target.className === `delete`){
+        const  li = e.target.parentElement;
+        list.removeChild(li)
+    }
 
-
+})
 
 
